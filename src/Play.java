@@ -7,8 +7,11 @@ public class Play {
         System.out.println("Enter the row and column to play");
         TicTacToe game = new TicTacToe();
         while(!game.isGameOver()) {
+            int row = scanner.nextInt();
+            int col = scanner.nextInt();
+            if(col <= 3 && row <= 3)
+                game.play(row - 1, col - 1);
             game.printBoard();
-            // your code here
         }
         scanner.close();
     }
